@@ -1,0 +1,25 @@
+#:include kv/Inscription.kv
+#:include kv/Connexion.kv
+#:include kv/HomeScreen.kv
+
+ScreenManager:
+	id: screen_manager
+
+	Screen:
+		name: "connexion"
+		Connexion:
+			id: connexion_screen
+			name: "Connexion_screen"
+
+	Screen:
+		name: "inscription"
+		Inscription:
+			id: inscription_screen
+			name: "Inscription_screen"
+			
+	Screen:
+		name: "homescreen"
+		HomeScreen:
+			id: home_screen
+			name: "HomeScreen"
+		

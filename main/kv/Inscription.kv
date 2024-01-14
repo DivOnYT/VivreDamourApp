@@ -1,0 +1,103 @@
+#: import MDToolbar kivymd.uix.toolbar.MDToolbar
+#: import MDTextField kivymd.uix.textfield
+#: import MDTextFieldRound kivymd.uix.textfield
+
+<Inscription>
+	BoxLayout:
+		BoxLayout:
+			orientation: 'vertical'
+			MDToolbar:
+				title: "VIVRE D'AMOUR"
+				md_bg_color: self.theme_cls.primary_color
+
+		
+			MDLabel:
+				font_style: "Button"
+				text: "Inscription"
+				text_color: 1, 0, 1, 0
+
+			MDTextField:
+				required: True
+				fill_color: 0, 0, 0, .4
+				color_mode: 'custom'
+				id: prenom
+				hint_text: "Prenom"
+				helper_text: "Pour s'inscrire il faut votre Prenom"
+
+			MDTextFieldRound:
+				id: email
+				fill_color: 0, 0, 0, .4
+				color_mode: 'custom'
+				icon_left: "email"
+				hint_text: "Email"
+				required: True
+				helper_text: "Pour s'inscrire il faut votre Email"
+
+			MDTextFieldRound:
+				id: password
+				fill_color: 0, 0, 0, .4
+				color_mode: 'custom'
+				icon_left: "key-variant"
+				hint_text: "Password"
+				required: True
+				helper_text: "Choissisez un bon Mot de passe" 
+
+			MDTextFieldRound:
+				fill_color: 0, 0, 0, .4
+				id: phone
+				color_mode: 'custom'
+				icon_left: "phone"
+				max_text_length: 10
+				hint_text: "Telephone"
+				required: True
+				helper_text: "Pour s'inscrire il faut votre Numero de Telephone"
+
+			FloatLayout:
+				MDLabel:
+					pos_hint: {'center_x': .7, 'center_y': .3}
+					text: "Homme"
+					width: dp(50)
+					text_color: 0, 0, 1, 1
+
+				MDLabel:
+					pos_hint: {'right_x': .4, 'center_y': .3}
+					text: "Femme"
+					width: dp(50)
+					text_color: 0, 0, 1, 1
+
+			FloatLayout:
+				MDCheckbox:
+					id: Femme
+					group: 'group'
+					active: True
+    				size_hint: None, None
+    				size: dp(48), dp(48)
+        			pos_hint: {'right_x': .1, 'center_y': .9}
+
+    			MDCheckbox:
+    				id: Homme
+    				group: 'group'
+    				size_hint: None, None
+    				size: dp(48), dp(48)
+        			pos_hint: {'center_x': .2, 'center_y': .9}
+        	MDLabel:
+        		id: on_error
+				font_style: "Button"
+				text_color: 1, 0, 1, 0
+				text: ""
+
+        	MDFillRoundFlatButton:
+        		text: "Inscription"
+        		md_bg_color: self.theme_cls.primary_color
+        		pos_hint: {'center_x': .5, 'center_y': .5}
+        		on_press:
+        			app.inscription()
+
+        	MDRaisedButton:
+    			text: "Vous Avez deja un compte Connexion"
+    			md_bg_color: 1, 1, 1, 0
+    			pos_hint: {'center_x': .5, 'center_y': .7}
+    			on_press:
+    				app.change_screen("connexion", direction="left", mode="pop")
+
+		

@@ -1,0 +1,28 @@
+#: import MDToolbar kivymd.uix.toolbar.MDToolbar
+#: import MDTextField kivymd.uix.textfield
+#: import MDTextFieldRound kivymd.uix.textfield
+
+<HomeScreen>
+	BoxLayout:
+		BoxLayout:
+			orientation: 'vertical'
+			MDToolbar:
+				title: "VIVRE D'AMOUR"
+				md_bg_color: self.theme_cls.primary_color
+				right_action_items: [['door-open', lambda x: print(app.change_screen('connexion', direction='left', mode='push'))]]
+			BoxLayout:
+				MDLabel:
+					text: "Message du Jour:"
+					pos_hint: {'center_x': .5, 'center_y': .7}
+				MDLabel:
+					id: Message
+					text: "Aucun Message Trouve\n ..."
+					pos_hint: {'center_x': .5, 'center_y': .5}
+			BoxLayout:
+				MDLabel:
+					text: "Parcours en cours:"
+					pos_hint: {'center_x': .9, 'center_y': .9}
+				MDLabel:
+					id: Parcours
+					text: "Aucun Parcours Trouve\n ..."
+					pos_hint: {'center_x': .5, 'center_y': .5}
